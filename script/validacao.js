@@ -18,6 +18,16 @@ function verificaValorValido(chute) {
         `
     }
 
+    if (chute === `Game over` || chute === `gameover` || chute === `game over` || chute === `GAME OVER`) {
+        document.body.innerHTML = `
+            <h2 class="gameOver">GAME OVER</h2>
+            <h3 class=>O numero secreto era ${numeroSecreto}</h3>
+            <button id="jogar-novamente" class="btn-jogar">Jogar novamente</button>
+        `
+        const body = document.querySelector('body');
+        body.classList.add('gameOver');
+    }
+
     else if (numero > numeroSecreto) {
         elementoChute.innerHTML += `
         <div>O número secreto é menor <i class="fa-solid fa-up-long"></i></div>
